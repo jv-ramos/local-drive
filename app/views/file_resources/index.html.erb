@@ -1,0 +1,26 @@
+<h1>Arquivos Disponíveis</h1>
+<%= link_to "Novo Arquivo", new_file_resource_path, class: "btn btn-primary" %>
+<% if @file_resources.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @file_resources.each do |file_resource| %>
+        <tr>
+          <td><%= file_resource.name %></td>
+          <td>
+            <%= link_to "Abrir", file_resource, class: "btn btn-primary" %>
+            <%= link_to "Baixar", download_file_resource_path(file_resource), class: "btn btn-success" %>
+            <%= link_to "Excluir", file_resource, data: {turbo_method: :delete, turbo_confirm: 'Tem certeza?'}, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Nenhum arquivo disponível.</p>
+<% end %>

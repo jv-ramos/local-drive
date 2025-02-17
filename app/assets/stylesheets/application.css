@@ -8,3 +8,12 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.video-fluid {
+  max-width: 100%;
+  height: auto;
+}

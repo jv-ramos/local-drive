@@ -1,0 +1,15 @@
+<h1>Enviar Novo Arquivo</h1>
+<%= form_with model: @file_resource, local: true do |form| %>
+  <div>
+    <%= form.label :name, "Nome do Arquivo" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :file, "Selecione o Arquivo" %>
+    <%= form.file_field :file %>
+  </div>
+  <div>
+    <%= form.submit "Enviar" %>
+  </div>
+<% end %>
+<%= link_to "Voltar", file_resources_path, class: "btn btn-secondary" %>

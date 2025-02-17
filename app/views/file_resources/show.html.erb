@@ -1,0 +1,8 @@
+<h1><%= @file_resource.name %></h1>
+<%= render_file(@file_resource.file) %>
+<ul>
+  <li><%= link_to "Baixar", download_file_resource_path(@file_resource), class: "btn btn-success" %>
+    <%= link_to "Editar", edit_file_resource_path(@file_resource), class: "btn btn-primary" %>
+    <%= link_to "Excluir", @file_resource, data: {turbo_method: :delete, turbo_confirm: 'Tem certeza?'}, class: "btn btn-danger" %></li>
+  <li><%= link_to "Voltar", file_resources_path, class: "btn btn-secondary" %></li>
+</ul>
